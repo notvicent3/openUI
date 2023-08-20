@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASIMOV Dev - The Gate to Web3 Open Source</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Highlight.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/vs2015.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #1e1e1e;
+        }
+
+        /* Estilos para la barra superior de VS Code */
+        .vscode-topbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            border-bottom: 1px solid #444;
+        }
+
+        /* Estilos para la barra lateral de VS Code */
+        .vscode-sidebar {
+            background-color: #2d2d2d;
+            height: 100vh;
+            color: #bbb;
+            padding-top: 20px;
+            border-right: 1px solid #444;
+        }
+
+        .vscode-sidebar .btn {
+            background-color: transparent;
+            border: none;
+            color: #bbb;
+            text-align: left;
+            width: 100%;
+            padding: 5px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .vscode-sidebar .btn:hover {
+            background-color: #444;
+        }
+
+        /* Estilos para la zona principal de VS Code */
+        .vscode-main {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            height: 100vh;
+            overflow-y: scroll;
+        }
+
+        .vscode-tab {
+            background-color: #333;
+            padding: 5px 10px;
+            border-radius: 3px 3px 0 0;
+            margin-bottom: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Estilos para el numerador de líneas de código */
+        .line-numbers {
+            color: #888;
+            text-align: right;
+            padding-right: 10px;
+            border-right: 1px solid #444;
+        }
+
+        /* Estilos para el contenido de código */
+        pre {
+            background-color: #1e1e1e !important;
+            border: none !important;
+            color: #d4d4d4 !important;
+        }
+
+        code {
+            color: #d4d4d4 !important;
+        }
+
+        /* Estilos para la barra de estado inferior */
+        .vscode-statusbar {
+            background-color: #333;
+            color: #bbb;
+            padding: 10px 0;
+            border-top: 1px solid #444;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Estilos para tooltips */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position the tooltip above the text */
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Animaciones */
+        .fadeIn {
+            animation-name: fadeIn;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <!-- Barra superior de VS Code -->
+        <div class="row vscode-topbar">
+            <div class="col-md-2">
+                📂 ASIMOV Dev
+            </div>
+            <div class="col-md-10 text-right" id="tab-title">
+                📄 README.md
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Barra lateral de VS Code -->
+            <div class="col-md-2 vscode-sidebar">
+                <button class="btn fadeIn" onclick="showContent('about', 'About.md')">📁🔍 About</button>
+                <button class="btn fadeIn" onclick="showContent('web3', 'Web3Projects.md')">🌐🚀 Web3 Projects</button>
+                <button class="btn fadeIn" onclick="showContent('contributions', 'OpenSourceContributions.md')">🔓🤖🔧 Open Source Contributions</button>
+                <button class="btn fadeIn" onclick="showContent('skills', 'Skills.md')">🛠️🌍 Skills & Experience</button>
+                <button class="btn fadeIn" onclick="showContent('projects', 'Projects.md')">🚀📚 Projects</button>
+                <button class="btn fadeIn" onclick="showContent('contact', 'Contact.md')">💌📞 Contact</button>
+            </div>
+
+            <!-- Contenido principal de VS Code -->
+            <div class="col-md-10 vscode-main">
+                <div class="row">
+                    <div class="col-md-1 line-numbers">
+                        1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>
+                    </div>
+                    <div class="col-md-11">
+                        <!-- Sección About -->
+                        <div class="vscode-tab-content fadeIn" id="about">
+                            <pre><code class="python">
+# About
+class Vicente:
+    def __init__(self):
+        self.name = "Vicente Mancho"
+        self.role = "Web3 Developer & AI Enthusiast"
+        self.mission = "Leading the way in Web3 development and beyond."
+
+vicente = Vicente()
+print(vicente.name, vicente.role, vicente.mission)
+                            </code></pre>
+                        </div>
+
+                        <!-- Sección Web3 Projects -->
+                        <div class="vscode-tab-content fadeIn hidden" id="web3">
+                            <pre><code class="javascript">
+// Web3 Projects
+const web3Projects = {
+    "ASIMOV Dev": "Leading the way in Web3 development and beyond.",
+    "GPT-Researcher": "Contributing to the future of AI research."
+};
+console.log(web3Projects);
+                            </code></pre>
+                        </div>
+
+                        <!-- Sección Open Source Contributions -->
+                        <div class="vscode-tab-content fadeIn hidden" id="contributions">
+                            <pre><code class="ruby">
+# Open Source Contributions
+contributions = {
+    "GPT-Researcher": "Proud contributor to this groundbreaking AI research project.",
+    "Other Projects": "Always looking for opportunities to contribute to open source."
+}
+puts contributions
+                            </code></pre>
+                        </div>
+
+                        <!-- Sección Skills & Experience -->
+                        <div class="vscode-tab-content fadeIn hidden" id="skills">
+                            <pre><code class="php">
+// Skills & Experience
+$web2_frontend = ["HTML", "CSS", "JavaScript", "jQuery", "Bootstrap"];
+$web2_backend = ["PHP", "MySQL", "Node.js", "Express.js"];
+$web25 = ["React", "Vue.js", "Angular", "MongoDB", "GraphQL"];
+$web3_frontend = ["Solidity", "Ethereum", "Smart Contracts", "DApps"];
+$web3_backend = ["IPFS", "Oracles", "Chainlink"];
+print_r($web2_frontend);
+print_r($web2_backend);
+print_r($web25);
+print_r($web3_frontend);
+print_r($web3_backend);
+                            </code></pre>
+                        </div>
+
+                        <!-- Sección Projects -->
+                        <div class="vscode-tab-content fadeIn hidden" id="projects">
+                            <pre><code class="java">
+// Projects
+public class Projects {
+    String gptResearcher = "Contributor to the GPT-Researcher project.";
+    String otherProjects = "Many more projects available on my GitHub.";
+}
+                            </code></pre>
+                        </div>
+
+                        <!-- Sección Contact -->
+                        <div class="vscode-tab-content fadeIn hidden" id="contact">
+                            <pre><code class="csharp">
+// Contact
+public class Contact {
+    string email = "vicente@asimov.dev";
+    string message = "Feel free to reach out for collaborations or tech discussions.";
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de estado inferior de VS Code -->
+        <div class="row vscode-statusbar">
+            <div class="col-md-4">
+                <span class="tooltip">🔀 master
+                    <span class="tooltiptext">Current Git branch</span>
+                </span>
+            </div>
+            <div class="col-md-4 text-center">
+                <span class="tooltip">⚠️ 0
+                    <span class="tooltiptext">No issues found</span>
+                </span>
+            </div>
+            <div class="col-md-4 text-right">
+                <span class="tooltip">🔌 5 Extensions
+                    <span class="tooltiptext">Installed extensions</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(sectionId, tabTitle) {
+            // Hide all content sections
+            const contents = document.querySelectorAll('.vscode-tab-content');
+            contents.forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            // Show the selected content section
+            const selectedContent = document.getElementById(sectionId);
+            selectedContent.classList.remove('hidden');
+
+            // Update the tab title
+            const titleElement = document.getElementById('tab-title');
+            titleElement.textContent = `📄 ${tabTitle}`;
+        }
+    </script>
+
+</body>
+
+</html>
