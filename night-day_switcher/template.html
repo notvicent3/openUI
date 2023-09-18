@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night-Day_switcher</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #ffffff;
+            --color-text: #111827;
+            --color-primary: #8b5cf6;
+        }
+
+        [data-theme="dark"] {
+            --color-bg: #111827;
+            --color-text: #ffffff;
+            --color-primary: #6d28d9;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+        }
+
+        .primary {
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-4 py-5">
+        <h1 class="text-3xl font-bold mb-4 primary">Night-Day_switcher</h1>
+
+        <button id="themeSwitcher" class="px-4 py-2 rounded bg-purple-500 text-white">Switch Theme</button>
+    </div>
+
+    <script>
+        const themeSwitcher = document.getElementById('themeSwitcher');
+
+        themeSwitcher.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+
+            if (currentTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        });
+    </script>
+</body>
+</html>
